@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css?family=Monoton|Oxygen+Mono|Press+Start+2P');
+// font-family: 'Press Start 2P', cursive; --- pixelated / videogame
+// font-family: 'Monoton', cursive; --- Welcome
+// font-family: 'Oxygen Mono', monospace; --- main text
+
+$pink: #ff00a5cc;
+$mint: #00ff66;
+$red: #ff2171;
+$orange: #ffa015;
+$yellow: #e8ff33;
+$green: #10D81D;
+$turquoise: #11b186;
+$blue: #094ca9;
+$purple: #4703d2;
+$shadow: #a5c72b;
+
+$clouds: linear-gradient(to right, #ffffff59, #ffffffb8 15% 85%, #ffffff59);
+
+$space-s: 3%;
+$space-m: 6%;
+$space-l: 10%;
+$space-xl: 20%;
+
+@mixin water-animation($animation-delay) {
+  position: absolute;
+  width: 120%;
+  height: 100%;
+  background-position: top;
+  background-size: cover;
+  opacity: 0.4;
+  animation: water 1.3s ease-in-out infinite alternate ($animation-delay);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(images/backgroundclouds.png);
+  background-attachment: fixed;
+  font-family: 'Oxygen Mono', monospace;
+  .cloud-bg {
+    padding: 0 $space-s;
+    background-image: $clouds;
+  }
+}
+
+.link {
+  background-color: $pink;
+  text-align: right;
+  padding: $space-s;
+}
+
+// styling of welcome text
+header {
+  text-align: center;
+  h4 {
+    margin-bottom: $space-l;
+  }
+  p:last-child {
+    font-size: 0.8em;
+    margin-bottom: $space-m;
+  }
+}
+
+h1 {
+  font-family: 'Monoton', cursive;
+  font-size: 3em;
+  font-weight: lighter;
+  text-transform: uppercase;
+  text-shadow: 4px 0px 1px $mint;
+  padding-top: $space-m;
+
+  span:first-child {
+    color: $red;
+  }
+  span:nth-child(2) {
+    color: $orange;
+  }
+  span:nth-child(3) {
+    color: $yellow;
+  }
+  span:nth-child(4) {
+    color: $green;
+  }
+  span:nth-child(5) {
+    color: $turquoise;
+  }
+  span:nth-child(6) {
+    color: $blue;
+  }
+  span:nth-child(7) {
+    color: $purple;
+  }
+}
+
+// styling of the sections
+h2 {
+  font-family: 'Press Start 2P', cursive;
+}
+
+// styling of big buttons
+main > button {
+  width: 100%;
+  padding: $space-s;
+  margin: $space-m auto $space-s auto;
+  border: 10px outset $shadow;
+  border-radius: 7px;
+  background-color: $yellow;
+  color: $pink;
+  text-shadow: 3px 0 $mint;
+  &:focus {
+    outline: none;
+  }
+}
+// change border to inset when button is clicked
+.button-toggle {
+  background-color: #c9ce28;
+  border: 10px inset $shadow;
+}
+
+// testing
+.content-container {
+  // hide content by default
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  font-size: 0;
+  transition: 0.3s ease-in-out;
+  // style
+  background-color: #1d232f;
+  color: #8efdb7;
+  box-shadow: inset 5px 5px 9px 3px #0f1311f2;
+  border-radius: 7px;
+}
+// show content when this class is added by JS
+.content-show {
+  max-height: 999em;
+  opacity: 1;
+  font-size: inherit;
+  padding: $space-m;
+}
+
+// projects carousel
+.carousel-container {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 8fr 1fr;
+}
+
+figure {
+  grid-column: col 1 / span 3;
+  grid-row: row 1;
+}
+
+icon-left {
+  grid-column: col 1;
+  grid-row: row 1;
+}
+
+.slides {
+  display: none
+}
+
+.slides img {
+  width: 100%;
+}
+
+.indicator {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.fill {
+  background-color: white;
+}
+
+// fish-element as grid
+.fish-element {
+  display: grid;
+  grid-template-rows: 1fr 1.3fr;
+  grid-template-columns: 1fr;
+  background-image: $clouds;
+}
+
+// styling of thought bubble
+.fish-thoughts {
+  margin: $space-s auto 0 auto;
+  width: 120px;
+}
+
+// styling of fish
+.fish {
+  display: block;
+  margin: $space-s auto;
+  width: 200px;
+  transform: rotateY(180deg);
+}
+
+.fish-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+// hide the water until contact is clicked
+.water-hide {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  transition: all 1s ease-out;
+}
+
+// toggle through JS when contact button is clicked, water will rise
+.water-show {
+  top: 0;
+  transition: all 1.5s ease-out;
+}
+
+// styling and animation of the water
+.water-light {
+  background-image: url(images/water-light.png);
+  top: 0;
+  @include water-animation(0s)
+}
+.water-dark {
+  @include water-animation(-1.3s)
+  background-image: url(images/water-dark.png);
+  top: 5px;
+}
+@keyframes water {
+  0% {
+    left: -15px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+// styling of footer
+footer {
+  background-color: $pink;
+  text-align: center;
+  padding: $space-m;
+}

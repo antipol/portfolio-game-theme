@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Trine Lund - web developer</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="link">
+    <p>Jump to <a href="#">Resume</a></p>
+  </div>
+
+  <!-- start div white transparent background -->
+  <div class="cloud-bg">
+    <header>
+      <!-- start welcome part -->
+      <h1>
+        <span class="w">w</span>
+        <span class="e">e</span>
+        <span class="l">l</span>
+        <span class="c">c</span>
+        <span class="o">o</span>
+        <span class="m">m</span>
+        <span class="e">e</span>
+      </h1>
+      <h4>to Trines web developer world</h4>
+      <p>Click a button to continue</p>
+      <p>Hint: one will save the fish!</p>
+      <!-- end welcome part -->
+    </header>
+
+    <main>
+
+      <!-- start ABOUT -->
+      <button onclick="openAbout()" class="about" id="borderAbout">
+        <h2>About</h2>
+      </button>
+      <!-- start content-container section -->
+      <section class="content-container" id="about">
+        <!-- start information about past, presense and future -->
+        <h3>Who am I?</h3>
+        <h4>Past</h4>
+        <p>
+          I always loved to create. No matter what.
+          As a child, Lego was my favourite toy, but only the building part, as soon as I had created something I took it apart to transform it into something else.
+          In my adult life I've had many different jobs, but none of them gave me "that" feeling, the right feeling.
+          Until now.
+        </p>
+        <h4>Present</h4>
+        <p>
+          The journey to become a web developer began with lots of soul searching and consideration of previous jobs and experiences.
+          I wanted to learn and I wanted to improve the world.
+          I love to solve riddles and solve mysteries.
+          And I love to create.
+          After 10 years in Berlin and lots of career detours I finally found something that makes sense to me, something that makes me want to skip nights and sit behind the screen 24/7 (don't worry, I don't).
+        </p>
+        <h4>Future</h4>
+        <p>
+          My curiousity seems to be unlimited when it comes to web development. At the moment I'm trying to concentrate on the 1 year course I'm currently taking, but that doesn't stop me from learning about computer science, cyber security and blockchain development in my spare time.
+        </p>
+        <p>
+          In other words: the future is digital, also my future.
+        </p>
+        <!-- end information about past ... -->
+        <!-- start things i like -->
+        <h3>Things I like</h3>
+        <p>learn stuff text text text</p>
+        <button type="button" name="button">Colours</button>
+        <div>Information about colours</div>
+        <button type="button" name="button">Solving riddles</button>
+        <div>Information about solving riddles</div>
+        <button type="button" name="button">People</button>
+        <div>Information about liking people</div>
+        <button type="button" name="button">To create</button>
+        <div>Information about creating</div>
+        <button type="button" name="button">My dog</button>
+        <div>Information about Billy</div>
+        <button type="button" name="button">Physics</button>
+        <div>Information about physics</div>
+        <!-- end things i like -->
+        <!-- start stuff I'm good at -->
+        <h3>Stuff I'm good at</h3>
+        <p>Information about skills</p>
+        <button type="button" name="button">Creativity</button>
+        <div>Information about colours</div>
+        <button type="button" name="button">Problem solving</button>
+        <div>Information about solving riddles</div>
+        <button type="button" name="button">Social+communicative</button>
+        <div>Information about liking people</div>
+        <!-- end stuff I'm good at -->
+        <!-- start shortcut to resume -->
+        <a href="resume.html">
+          <div>shortcut</div>
+        </a>
+        <!-- end shortcut to resume -->
+      </section>
+      <!-- end content-container section-->
+      <!-- end ABOUT -->
+
+      <!-- start PROJECTS -->
+      <button onclick="openProjects()" class="projects" id="borderProjects">
+        <h2>Projects</h2>
+      </button>
+      <!-- start content-container section -->
+      <section class="content-container carousel-container" id="projects">
+        <!-- start first project -->
+        <figure class="slides">
+          <img src="images/screenshot.png" alt="">
+          <figcaption>
+            <h4>Project name</h4>
+            <a href="#">Launch in GitHub</a>
+            <p>info about project</p>
+          </figcaption>
+        </figure>
+        <!-- end first project -->
+        <!-- start second project -->
+        <figure class="slides">
+          <img src="images/backgroundclouds.png" alt="">
+          <figcaption>
+            <h4>Project name</h4>
+            <a href="#">Launch in GitHub</a>
+            <p>info about project</p>
+          </figcaption>
+        </figure>
+        <!-- end second project -->
+        <!-- start third project -->
+        <figure class="slides">
+          <img src="images/screenshot.png" alt="">
+          <figcaption>
+            <h4>Project name</h4>
+            <a href="#">Launch in GitHub</a>
+            <p>info about project</p>
+          </figcaption>
+        </figure>
+        <!-- end third project -->
+        <!-- start forth project -->
+        <figure class="slides">
+          <img src="images/bottomgoal.png" alt="">
+          <figcaption>
+            <h4>Project name</h4>
+            <a href="#">Launch in GitHub</a>
+            <p>info about project</p>
+          </figcaption>
+        </figure>
+        <!-- end fourth project -->
+          <i onclick="plusDivs(-1)" class="fas fa-chevron-circle-left icon-left"></i>
+          <i onclick="plusDivs(1)" class="fas fa-chevron-circle-right icon-right"></i>
+          <span onclick="currentDiv(1)" class="indicator fill"></span>
+          <span onclick="currentDiv(2)" class="indicator fill"></span>
+          <span onclick="currentDiv(3)" class="indicator fill"></span>
+          <span onclick="currentDiv(4)" class="indicator fill"></span>
+      </section>
+      <!-- end content-container section-->
+      <!-- end PROJECTS -->
+
+      <!-- start CONTACT -->
+      <button onclick="openContact()" class="contact" id="borderContact">
+        <h2>Contact</h2>
+      </button>
+      <!-- start content-container section-->
+      <section class="content-container" id="contact">
+        <p>Questions? Curious? Send me a message!</p>
+        <!-- start contact form -->
+        <form class="" action="index.html" method="post">
+        </form>
+        <!-- end contact form -->
+      </section>
+      <!-- end content-container section -->
+      <!-- end CONTACT -->
+
+    </main>
+  </div>
+  <!-- end div white transparent background -->
+
+  <!-- start fish element -->
+  <div class="fish-element">
+    <img src="images/thoughtbubbleleft.png" alt="thought bubble with the words help me" class="fish-thoughts">
+    <div class="fish-bg">
+      <img src="images/hero.png" alt="image of a fish" class="fish">
+      <div class="water-hide" id="waterToggle">
+        <div class="water-light"></div>
+        <div class="water-dark"></div>
+      </div>
+    </div>
+  </div>
+  <!-- end fish element -->
+
+  <!-- start fixed items -->
+  <div class="bottom-cloud">
+    <div class="progress-rainbow"></div>
+    <div class="progress-white" id="whiteBar"></div>
+  </div>
+  <!-- end fixed items -->
+
+
+  <footer>
+    <a href="https://github.com/antipol" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/trine-grotkjaer-lund/" target="_blank">Linkedin</a>
+    <p>Trine Lund - 2019</p>
+  </footer>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
